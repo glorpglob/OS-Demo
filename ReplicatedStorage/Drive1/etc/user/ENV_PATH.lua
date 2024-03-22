@@ -1,4 +1,4 @@
-neofetch = [[Sword
+neofetch = [[<font size="6">
                                                                                        
                                                                   *#%%                 
                                                                ****#%                  
@@ -24,10 +24,10 @@ neofetch = [[Sword
                          %##%#%                                                        
                        =+*#%%                                                          
                      %*==+**                                                           
-                     %#%%#]]
+                     %#%%#</font>]]
 
-local drive = game.ReplicatedStorage["Drive1"]
-local parser = require(game.ReplicatedStorage["Drive1"].kernel.software.parser)
+local drive = game.ReplicatedStorage["Drive01"]
+local parser = require(game.ReplicatedStorage["Drive01"].kernel.software.parser)
 
 cmds = {
 	["s_version"] = {
@@ -55,9 +55,16 @@ cmds = {
 	},
 	["help"] = {
 		function(args)
-			return "\n1. s_version\n2. restart\n3. gmemory\n4. neofetch\n5. setdeskenv\n6. ping\n7. thrwerr\n8. logout" .. 
-				"\n9. savestorage\n10. getstorage\n11. run\n12. run_os\n13. nope\n14. fthrwerr\n15. print\n16. getallstorage" .. 
-				"\n17. system [help-system for more]\n18. add_deskenv [disabled]\n19. rm_deskenv [disabled]"
+			local a = "\n"
+			local i = 0
+			
+			for v in pairs (cmds) do 
+				i += 1
+				a ..= i .. ". " .. v .. "\n"
+			end
+			return a -- .. "\n1. s_version\n2. restart\n3. gmemory\n4. neofetch\n5. setdeskenv\n6. ping\n7. thrwerr\n8. logout" .. 
+				--"\n9. savestorage\n10. getstorage\n11. run\n12. run_os\n13. nope\n14. fthrwerr\n15. print\n16. getallstorage" .. 
+				--"\n17. system [help-system for more]\n18. add_os\n19. rm_os"
 		end,
 		["default"] = "Commands:",
 		args = {
@@ -112,7 +119,7 @@ cmds = {
 				return "FAILED: Currently not signed into a desktop environment, could not log out" 
 			end
 			
-			local devenv = game.ReplicatedStorage["Drive1"].dev_env[plrgui.Main.dev_env.Value]
+			local devenv = game.ReplicatedStorage["Drive01"].dev_env[plrgui.Main.dev_env.Value]
 			if not devenv.UI:FindFirstChild("LOG_IN") then 
 				return "FAILED: You are not currently logged into a desktop environment that supports this feature"
 			end
@@ -143,13 +150,13 @@ cmds = {
 	},
 	["neofetch"] = {
 		function(args) 
-			return  neofetch .. "\nMemory usage: " .. math.round(game:GetService("Stats"):GetTotalMemoryUsageMb()) / 1000 .. 
+			return  "\nMemory usage: " .. math.round(game:GetService("Stats"):GetTotalMemoryUsageMb()) / 1000 .. 
 				"GB (by you: " .. math.round(game:GetService("Stats"):GetMemoryUsageMbForTag(Enum.DeveloperMemoryTag.Script) 
-					+ game:GetService("Stats"):GetMemoryUsageMbForTag(Enum.DeveloperMemoryTag.Gui)) / 1000 .. "GB)\n".. "Desktop Environment: " .. game.ReplicatedStorage["Drive1"].dev_env.current.Value
+					+ game:GetService("Stats"):GetMemoryUsageMbForTag(Enum.DeveloperMemoryTag.Gui)) / 1000 .. "GB)\n".. "Desktop Environment: " .. game.ReplicatedStorage["Drive01"].dev_env.current.Value
 				.. "\nDesktop environment version: " .. drive.dev_env.Sword.declaratives.version.Value ..
-				"\nKernel version: " .. drive.kernel.kernelversion.Value .. "\nCurrent user: admin"
+				"\nKernel version: " .. drive.kernel.kernelversion.Value .. "\nCurrent user: " .. drive.user.environment.Value .. neofetch
 		end,
-		["default"] = "Sword:",
+		["default"] = "",
 		args = {
 			function(str) return str end, 
 			function(str) return str end,
@@ -321,7 +328,7 @@ cmds = {
 			local commands = { 
 				["restart"] = function()
 					local Player = game.Players.LocalPlayer
-					local NewDrive = Player.Backpack.Drive1:Clone()
+					local NewDrive = Player.Backpack.Drive01:Clone()
 					local NewBIOS = Player.Backpack.BIOS:Clone()
 					
 					for _, v in pairs(Player.PlayerGui:GetChildren()) do
@@ -335,7 +342,7 @@ cmds = {
 					
 					NewBIOS.Parent = Player.PlayerGui 
 					NewDrive.Parent = game.ReplicatedStorage
-					game.ReplicatedStorage.Drive1:Destroy()
+					game.ReplicatedStorage.Drive01:Destroy()
 				end,
 			}
 			
@@ -348,23 +355,43 @@ cmds = {
 			function(str) return str end 
 		}
 	},
-	["add_deskenv"] = {
+	["add_os"] = {
 		function (args) 
-			
+			local OS = game.ReplicatedStorage.rq:InvokeServer(args[1]) 
+			return "Added: " .. OS.info.osname.Value
 		end,
+		["default"] = "",
 		args = {
-			function(str) return string.split(" ")[2] end, 
-			function(str) return string.split(" ")[2] end,
+			function(str) return string.split(str, " ")[2] end, 
+			function(str) return str end,
 			function(str) return str end
 		},		
 	},
-	["rm_deskenv"] = {
+	["rm_os"] = {
 		function (args) 
-
+			game.ReplicatedStorage[args[1]]:Destroy() 
+			return "Destroyed"
 		end,
+		["default"] = "Status",
 		args = {
-			function(str) return string.split(" ")[2] end, 
-			function(str) return string.split(" ")[2] end,
+			function(str) return string.split(str, " ")[2] end, 
+			function(str) return str end,
+			function(str) return str end
+		},	
+	},
+	["new_user"] = {
+		function (args) 
+			print(args)
+			local user = drive.user.admin:Clone()
+			user.Name = args[1] 
+			user.info.password.Value = args[2]
+			user.Parent = drive.user
+			return "Created [" .. args[1] .. ", " .. args[2] .. "]"
+		end,
+		["default"] = "Status",
+		args = {
+			function(str) return string.split(str, " ")[2] end, 
+			function(str) return string.split(str, " ")[3] end,
 			function(str) return str end
 		},	
 	}
