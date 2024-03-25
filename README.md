@@ -8,7 +8,16 @@ NOTE: Instances of "Drive1" may need to be replaced with "Drive01"
 
 ## Update Log  
 <details>
-  <summary>Deskenv 0.1.6</summary>
+  <summary>Kernel 0.1.1 | Deskenv 0.1.7</summary>
+  
+* Added pressing `f4` to force a restart
+* Increased GUI compatibility (especially with moving windows)
+* Began adding root user functionality
+* Began formatting Kernel version by date as well
+* Added functionality for retrieving the version number specifically, to assist with development purposes
+</details>
+<details>
+  <summary>Kernel 0.1.0 | Deskenv 0.1.6</summary>
   
 * Added `new_user` command
 * Added ability to log into multiple accounts (however applications will be reset when changing accounts)
