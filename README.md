@@ -81,7 +81,7 @@ NOTE: Instances of "Drive1" may need to be replaced with "Drive01"
 </details>
 
 <details>
-  <summary>Deskenv 0.1</summary>
+  <summary>Deskenv 0.1.0</summary>
   
 * Added opening/closing applications via the taskbar
 * Added settings application with currently no functionality
@@ -89,7 +89,7 @@ NOTE: Instances of "Drive1" may need to be replaced with "Drive01"
 * Added default background (cloud :3) 
 </details>
 <details>
-  <summary>Deskenv 0.0.9 | Kernel 0.0.5]</summary>
+  <summary>Deskenv 0.0.9</summary>
   
 * Added `system 'restart'` command which will restart EVERYTHING.
 </details>
@@ -113,7 +113,6 @@ NOTE: Instances of "Drive1" may need to be replaced with "Drive01"
   
 * Added tedit, a text editor with similar usage to Vim
 * Return now enters a command, not RightAlt (change applies to both Sword and default desktop environments)
-* No kernel changes
 </details>
 <details>
   <summary>Deskenv 0.0.5</summary>
@@ -122,7 +121,6 @@ NOTE: Instances of "Drive1" may need to be replaced with "Drive01"
 * Added storage with the savestorage and getstorage commands
 * Added the ability to change the default deskenv on joining
 * Implemented logout, restart and shutdown buttons in Sword 
-* No kernel changes
 </details>
 <details>
   <summary>Deskenv 0.0.4 | Kernel 0.0.3</summary>
@@ -136,5 +134,4 @@ NOTE: Instances of "Drive1" may need to be replaced with "Drive01"
   <summary>Deskenv 0.0.3 | Kernel 0.0.2</summary>
   
 * Fixed an issue where GUIs would not return to their respective desktop environments, please note this means you must now declare for each ScreenGUI your desktop environment with a StringValue called `dev_env`. The value must be your unique identifier.
-* No notable kernel changes
 </details>
