@@ -14,7 +14,7 @@ NOTE: Instances of "Drive1" may need to be replaced with "Drive01"
 * Changes to interpreter
 </details>
 <details>
-  <summary>Kernel 0.1.1 | Deskenv 0.1.7</summary>
+  <summary>Deskenv 0.1.7 | Kernel 0.1.1</summary>
   
 * Added pressing `f4` to force a restart
 * Increased GUI compatibility (especially with moving windows)
@@ -23,13 +23,13 @@ NOTE: Instances of "Drive1" may need to be replaced with "Drive01"
 * Added functionality for retrieving the version number specifically, to assist with development purposes
 </details>
 <details>
-  <summary>Kernel 0.1.0 | Deskenv 0.1.6</summary>
+  <summary>Deskenv 0.1.6 | Kernel 0.1.0</summary>
   
 * Added `new_user` command
 * Added ability to log into multiple accounts (however applications will be reset when changing accounts)
 </details>
 <details>
-  <summary>Kernel 0.0.9 | BIOS 2.1 </summary>
+  <summary>BIOS 2.1 | Kernel 0.0.9</summary>
   
 * Added importing OS functionality
 * Added `rm_os` and `add_os`
