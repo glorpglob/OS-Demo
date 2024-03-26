@@ -8,6 +8,12 @@ NOTE: Instances of "Drive1" may need to be replaced with "Drive01"
 
 ## Update Log  
 <details>
+  <summary>Kernel 0.1.2 </summary>
+  
+* Added super user and root account access
+* Changes to interpreter
+</details>
+<details>
   <summary>Kernel 0.1.1 | Deskenv 0.1.7</summary>
   
 * Added pressing `f4` to force a restart
