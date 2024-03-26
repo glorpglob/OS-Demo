@@ -6,7 +6,14 @@ NOTE: Github is updated slowly
 
 NOTE: Instances of "Drive1" may need to be replaced with "Drive01"
 
-## Update Log  
+## Update Log 
+<details>
+  <summary>Deskenv 0.1.8 </summary>
+  
+* Moving guis fixes
+* Selecting application changes ZIndex
+* Added fullscreen option
+</details>
 <details>
   <summary>Kernel 0.1.2 </summary>
   
