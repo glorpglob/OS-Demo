@@ -8,6 +8,12 @@ NOTE: Instances of "Drive1" may need to be replaced with "Drive01"
 
 ## Update Log 
 <details>
+  <summary>Kernel 0.1.4 </summary>
+  
+* Began SLang development
+* Added `slang_version`
+</details>
+<details>
   <summary>Kernel 0.1.3 </summary>
   
 * Ported SaveDataAPI
