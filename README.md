@@ -8,6 +8,13 @@ NOTE: Instances of "Drive1" may need to be replaced with "Drive01"
 
 ## Update Log 
 <details>
+  <summary>Deskenv 0.1.9 </summary>
+  
+* Renamed all GUIs to remove "[Binary]"
+* Renamed "cmd" to "Terminal"
+* Made modifications to the GUI of the warning gui to make it more visually appealing
+</details>
+<details>
   <summary>Kernel 0.1.4 </summary>
   
 * Began SLang development
