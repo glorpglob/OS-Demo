@@ -8,6 +8,13 @@ NOTE: Instances of "Drive1" may need to be replaced with "Drive01"
 
 ## Update Log 
 <details>
+  <summary>Kernel 0.1.5 </summary>
+  
+* Updated SLang to v0.0.1
+* Added interpreter, customised parser, router and core.io to SLang
+N.B: SLang is still not availible for use
+</details>
+<details>
   <summary>Deskenv 0.1.9 </summary>
   
 * Renamed all GUIs to remove "[Binary]"
