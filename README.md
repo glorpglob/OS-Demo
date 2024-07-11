@@ -8,6 +8,19 @@ NOTE: Instances of "Drive1" may need to be replaced with "Drive01"
 
 ## Update Log 
 <details>
+  <summary>Deskenv 0.2.1 | Kernel 0.1.6 </summary>
+  
+* Added rollcall() function and filestructure modulescript
+* Began development of file explorer
+N.B: SLang is still not availible for use
+</details>
+<details>
+  <summary>Deskenv 0.2.0 </summary>
+  
+* Began development of Sword Web
+N.B: SLang is still not availible for use
+</details>
+<details>
   <summary>Kernel 0.1.5 </summary>
   
 * Updated SLang to v0.0.1
