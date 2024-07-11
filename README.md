@@ -2,11 +2,17 @@
 Operating System demo made on Roblox
 
 
-NOTE: Github is updated slowly
+NOTE: Github is updated slowly (more up to date: https://create.roblox.com/store/asset/18438836709)
 
 NOTE: Instances of "Drive1" may need to be replaced with "Drive01"
 
 ## Update Log 
+<details>
+  <summary>Deskenv 0.2.3 | Kernel 0.1.7 </summary>
+  
+* Fixed problem where switching accounts would switch to legacy applications
+* Moved `system` commands to root user only
+</details>
 <details>
   <summary>Deskenv 0.2.2 </summary>
   
