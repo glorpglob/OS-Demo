@@ -8,6 +8,12 @@ NOTE: Instances of "Drive1" may need to be replaced with "Drive01"
 
 ## Update Log 
 <details>
+  <summary>Deskenv 0.2.2 </summary>
+  
+* Added ability to change background in settings
+N.B: SLang is still not availible for use
+</details>
+<details>
   <summary>Deskenv 0.2.1 | Kernel 0.1.6 </summary>
   
 * Added rollcall() function and filestructure modulescript
